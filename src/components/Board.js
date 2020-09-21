@@ -2,22 +2,41 @@ import React, { useState, useEffect } from "react";
 import Counter from "../Counter";
 
 const Ingame = (Button) => {
-  const [sec, setSec] = useState(5);
+  const [sec, setSec] = useState();
 
   useEffect(() => {
     //컴포넌트가 마운트 되고 setTimeout 함수를 실행
     setTimeout(() => {
-      alert(
-        `${sec}초 경과, 게임 끝! 참여해주셔서 감사합니다.\n이벤트 응모페이지로 이동합니다`
-      );
+      
+      // window.confirm(
+      //   `${sec}초 경과, 게임 끝! 참여해주셔서 감사합니다.\n이벤트 응모페이지로 이동합니다`
+      // )
+
+
+      if(window.confirm() == true){
+        window.location = "/input";
+        
+      } else {
+        return false;
+      };
+
+      
       console.log(`${sec}초 경과, 게임 끝!`);
-    }, 5000);
+      window.location = "/input"; //여기에 놓을거면 window.confirm 아니어도 alert를 했어도 됐음
+                                  //confirm을 놓은 이유는 true false를 하려고 놓은건데..
+    }, 5000)
+    
+
 
     return () => {
       clearTimeout(sec);
     };
   }, []); //두번째 인자로 빈 배열 넣어주기
 
+    // if(setTimeout() == false){
+    //   window.location = "/input";
+    //   return false;
+    // }
   return <div></div>;
 };
 

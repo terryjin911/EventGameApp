@@ -25,7 +25,7 @@ function App(onStart) {
             <br></br>
             <a
               className="App-link"
-              href="https://reactjs.org"
+              href="https://github.com/terryjin911"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -47,19 +47,19 @@ function App(onStart) {
             </p>
           </h4> */}
 
-          <Link to="/ingame">
+          {/* <Link to="/ingame">
             <br></br>
             <a className="App-start" target="_blank" rel="noopener noreferrer">
               <button onClick={onStart}>START</button>
             </a>
-          </Link>
+          </Link> */}
 
           <Route path="/" component={Main} exact={true} />
           <Route path="/ingame" component={Board} />
           <Route path="/input" component={End} />
         </header>
 
-        <Button />
+        {/* <Button /> */}
       </div>
     </div>
   );
