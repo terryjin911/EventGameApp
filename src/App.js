@@ -10,10 +10,13 @@ import End from "./components/End";
 
 import Info from "./Info";
 import Button from "./Counter";
+import TopHeader from "./TopHeader";
 
-function App(onStart) {
+function App() {
   return (
     <div>
+      {/* <TopHeader /> */}
+
       <div className="App">
         <header className="App-header">
           {/* 페이지 이동 */}
@@ -32,12 +35,10 @@ function App(onStart) {
               Go Chill
             </a>
           </div>
-
           <div>
             {/* 도넛 */}
             <img src={logo} className="App-logo" alt="logo" />
           </div>
-
           {/* <h4>
             <p>
               도넛 OR start 버튼을 눌러서 게임시작!<br></br>
@@ -46,14 +47,12 @@ function App(onStart) {
               SCORE를 올려보세요!
             </p>
           </h4> */}
-
           {/* <Link to="/ingame">
             <br></br>
             <a className="App-start" target="_blank" rel="noopener noreferrer">
               <button onClick={onStart}>START</button>
             </a>
           </Link> */}
-
           <Route path="/" component={Main} exact={true} />
           <Route path="/ingame" component={Board} />
           <Route path="/input" component={End} />
