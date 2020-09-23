@@ -47,3 +47,9 @@
     transform: rotate(360deg);
   }
 }
+.global_menu {
+  width: 55px;
+  background-color: #2cbbb6;
+  padding: 22px 0px;
+  box-sizing: border-box;
+}

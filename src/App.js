@@ -7,18 +7,20 @@ import "./App.css";
 import Main from "./components/Main";
 import Board from "./components/Board";
 import End from "./components/End";
-
-import Info from "./Info";
-import Button from "./Counter";
-import TopHeader from "./TopHeader";
+import GNB from "./GNB"
 
 function App() {
   return (
     <div>
       {/* <TopHeader /> */}
-
+      
       <div className="App">
         <header className="App-header">
+
+
+
+
+          {/* <GNB /> */}
           {/* 페이지 이동 */}
           <div style={{ textAlign: "left" }}>
             <br></br>
@@ -35,8 +37,13 @@ function App() {
               Go Chill
             </a>
           </div>
+
+
+
+
+
+          {/* Doughnut */}
           <div>
-            {/* 도넛 */}
             <img src={logo} className="App-logo" alt="logo" />
           </div>
           {/* <h4>
@@ -47,12 +54,10 @@ function App() {
               SCORE를 올려보세요!
             </p>
           </h4> */}
-          {/* <Link to="/ingame">
-            <br></br>
-            <a className="App-start" target="_blank" rel="noopener noreferrer">
-              <button onClick={onStart}>START</button>
-            </a>
-          </Link> */}
+
+
+
+
           <Route path="/" component={Main} exact={true} />
           <Route path="/ingame" component={Board} />
           <Route path="/input" component={End} />

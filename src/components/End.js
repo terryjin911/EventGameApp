@@ -5,6 +5,7 @@ const End = () => {
   const [username, setUserName] = useState("");
   const [useremail, setUserEmail] = useState("");
 
+  //form data
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -24,7 +25,9 @@ const End = () => {
   //   setUserEmail("");
   // };
 
+  //데이터 백엔드 저장처리함수
   const onEntryDataSave = () => {
+    // 유효성검사 만약 form이 비어있으면
     if (user.name == "") {
       alert("이름을 입력해주세요.");
       return false;
@@ -34,34 +37,51 @@ const End = () => {
       alert("이메일을 입력해주세요.");
       return false;
     }
+
+
+
   };
 
+
+  //Ingame에서 받아온 totalScore
+  // const totalScore {
+
+  //   return <div>
+  //     <h1>나의 총 Score: {props.totalScore}</h1>;
+  //     </div>
+  // }
   return (
     <div>
+
+      <div>
+        {/* 점수표시 OR .... */}
+        <h2>Score : </h2>
+      </div>
+
+      {/* 응모 폼 */}
       <form>
         <p>Name : </p>
         <input
           type="text"
-          name="username"
+          name="name"
           placeholder="이름을 입력하세요"
-          // value="user"
+          // value="user.name"
           onChange={(e) => onChangeUserName(e)}
         />
 
         <p>Email : </p>
         <input
           type="text"
-          name="useremail"
+          name="email"
           placeholder="이메일을 입력하세요"
-          // value="user"
+          // value="user.email"
           onChange={(e) => onChangeUserName(e)}
         />
         <br></br>
 
+        {/* 응모 폼 전송버튼 */}
         <button
-          type="submit"
-          // onClick={onClickFunction}
-          // onClick={(e) => onFileUpload(e)}
+          onClick={() => onEntryDataSave()}
         >
           응모
         </button>
@@ -70,47 +90,5 @@ const End = () => {
   );
 };
 
-//타이머가 끝나면서 나오는 end화면.
-//Ingame에서 받아온 totalScore와 input Name,Email이 뜨는 곳
-function totalScore(props) {
-  return <h1>나의 총 Score: {props.totalScore}</h1>;
-}
-
-//응모하기 위한 정보를 입력할 input과 [응모하기] button이 필요 => Info.js
-// function input({ type, placeholder, value, onChange }) {
-//   return (
-//     <div>
-//       <input
-//         type={type}
-//         placeholder={placeholder}
-//         value={value}
-//         onChange={onChange}
-//       />
-
-//       <p>InputName : </p>
-//       <input
-//         type="text"
-//         name="username"
-//         placeholder="name"
-//         onChange={(e) => onClickFunction(e)}
-//       />
-
-//       <p>InputEmail : </p>
-//       <input
-//         type="text"
-//         name="useremail"
-//         placeholder="email"
-//         onChange={(e) => onClickFunction(e)}
-//       />
-//       <br></br>
-//       <button
-//         type="button"
-//         // onClick={(e) => onFileUpload(e)}
-//       >
-//         응모
-//       </button>
-//     </div>
-//   );
-// }
 
 export default End;
